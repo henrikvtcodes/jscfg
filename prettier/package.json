@@ -1,5 +1,5 @@
 {
-  "name": "jsconfig",
+  "name": "prettier",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,9 +8,5 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "eslint": "^8.56.0",
-    "prettier": "^3.2.2"
-  }
+  "license": "ISC"
 }
