@@ -1,6 +1,6 @@
 {
   "name": "prettier-config-henrik",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "henrikvtcodes' shared prettier config",
   "type": "module",
   "main": "index.js",
