@@ -1,12 +1,16 @@
 {
-  "name": "prettier",
+  "name": "prettier-config-henrik",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "types": "index.d.ts",
+  "scripts": {},
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "MIT",
+  "dependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
+    "prettier-plugin-tailwindcss": "^0.5.11"
+  }
 }
