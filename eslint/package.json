@@ -20,6 +20,11 @@
     "lint",
     "config"
   ],
+  "eslintConfig": {
+    "extends": [
+      "./index.js"
+    ]
+  },
   "author": "Henrik VT <hello@henrikvt.com>",
   "license": "MIT",
   "dependencies": {

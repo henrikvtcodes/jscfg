@@ -57,6 +57,9 @@ importers:
       '@ianvs/prettier-plugin-sort-imports':
         specifier: ^4.1.1
         version: 4.1.1(prettier@3.2.2)
+      eslint-config-henrik:
+        specifier: workspace:^
+        version: link:../eslint
       prettier-plugin-tailwindcss:
         specifier: ^0.5.11
         version: 0.5.11(@ianvs/prettier-plugin-sort-imports@4.1.1)(prettier@3.2.2)
