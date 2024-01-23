@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-henrik",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "henrikvtcodes' shared eslint config",
   "type": "commonjs",
   "main": "index.js",
