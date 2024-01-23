@@ -14,7 +14,25 @@ These are my base rules for Typescript, which also includes the prettier reset.
 
 This includes the base Typescript rules along with general JSX linting and rules of hooks. Since I use tailwind css a lot, it also includes the linting plugin for that.
 
-
 #### `henrik/next`
 
 This includes the base Typescript rules, React config, as well as the `next/core-web-vitals` config.
+
+### How to use
+
+**Install**
+
+```sh
+pnpm add -D eslint-config-henrik
+```
+
+`.eslintrc.cjs`
+
+```js
+/** @type {import('eslint').Linter.Config} */
+module.exports = {
+  // Pick one of these
+  extends: ["henrik", "henrik/react", "henrik/next"],
+  // rest of your config
+};
+```
