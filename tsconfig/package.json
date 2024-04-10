@@ -1,0 +1,19 @@
+{
+  "name": "tsconfig-henrik",
+  "version": "1.0.0",
+  "description": "henrikvtcodes' shared typescript config",
+  "repository": "git@github.com:henrikvtcodes/jscfg.git",
+  "keywords": [
+    "javascript",
+    "typescript",
+    "ecmascript",
+    "lint",
+    "config",
+    "tsconfig"
+  ],
+  "author": "Henrik VT <hello@henrikvt.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}
