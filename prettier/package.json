@@ -1,6 +1,6 @@
 {
   "name": "prettier-config-henrik",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "henrikvtcodes' shared prettier config",
   "type": "module",
   "main": "index.js",
@@ -24,12 +24,12 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
-    "prettier-plugin-tailwindcss": "^0.5.11"
+    "@ianvs/prettier-plugin-sort-imports": "^4.2.1",
+    "prettier-plugin-tailwindcss": "^0.5.13"
   },
   "devDependencies": {
-    "prettier": "^3.2.2",
-    "eslint-config-henrik": "workspace:^"
+    "eslint-config-henrik": "workspace:^",
+    "prettier": "^3.2.5"
   },
   "peerDependencies": {
     "prettier": "^3.2.2"
