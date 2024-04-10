@@ -23,7 +23,10 @@ This includes the base Typescript rules, React config, as well as the `next/core
 **Install**
 
 ```sh
-pnpm add -D eslint-config-henrik
+# pnpm
+pnpm add -D eslint eslint-config-henrik @typescript-eslint/parser
+# Bun
+bun add -d eslint eslint-config-henrik @typescript-eslint/parser
 ```
 
 `.eslintrc.cjs`
@@ -33,6 +36,7 @@ pnpm add -D eslint-config-henrik
 module.exports = {
   // Pick one of these
   extends: ["henrik", "henrik/react", "henrik/next"],
+  parser: "@typescript-eslint/parser",
   // rest of your config
 };
 ```
