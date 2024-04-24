@@ -20,6 +20,7 @@ const config = {
     "~/(.*)$",
     "^[.]", // relative imports
   ],
+  importOrderTypeScriptVersion: "^5.4",
 };
 
 export default config;

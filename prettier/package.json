@@ -1,11 +1,11 @@
 {
   "name": "prettier-config-henrik",
-  "version": "1.1.0",
+  "version": "1.2.1",
   "description": "henrikvtcodes' shared prettier config",
   "type": "module",
   "main": "index.js",
   "types": "index.d.ts",
-  "repository": "git@github.com:henrikvtcodes/jscfg.git",
+  "repository": "https://github.com/henrikvtcodes/jscfg",
   "scripts": {},
   "keywords": [
     "javascript",
@@ -25,13 +25,15 @@
   "license": "MIT",
   "dependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.2.1",
-    "prettier-plugin-tailwindcss": "^0.5.13"
+    "prettier-plugin-tailwindcss": "^0.5.14"
   },
   "devDependencies": {
     "eslint-config-henrik": "workspace:^",
-    "prettier": "^3.2.5"
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5"
   },
   "peerDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "4.2.1",
     "prettier": "^3.2.2"
   }
 }
