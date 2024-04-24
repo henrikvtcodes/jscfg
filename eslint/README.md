@@ -12,7 +12,7 @@ These are my base rules for Typescript, which also includes the prettier reset.
 
 #### `henrik/react`
 
-This includes the base Typescript rules along with general JSX linting and rules of hooks. Since I use tailwind css a lot, it also includes the linting plugin for that.
+This includes the base Typescript rules along with general JSX linting and rules of hooks.
 
 #### `henrik/next`
 
@@ -40,3 +40,12 @@ module.exports = {
   // rest of your config
 };
 ```
+
+### Additional Settings
+
+There are also a few other subconfigs for common tools:
+
+| Config        | Description                             |
+| ------------- | --------------------------------------- |
+| `tailwindcss` | Includes the Tailwind CSS ESLint plugin |
+| `drizzle`     | Includes the Drizzle ORM ESLint plugin  |
