@@ -1,10 +1,10 @@
 {
   "name": "eslint-config-henrik",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "henrikvtcodes' shared eslint config",
   "type": "commonjs",
   "main": "index.js",
-  "repository": "git@github.com:henrikvtcodes/jscfg.git",
+  "repository": "github.com:henrikvtcodes/jscfg",
   "exports": {
     ".": "./index.js",
     "./react": "./react.js",
