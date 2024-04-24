@@ -8,12 +8,18 @@ This contains my preferred typescript config.
 
 ```sh
 # pnpm
-pnpm add -D tsconfig-henrik
+pnpm add -D typescript tsconfig-henrik
 # Bun
-bun add -d tsconfig-henrik
+bun add -d typescript tsconfig-henrik
 ```
 
 **Import**
+
+| Config Path                  | Description                                      |
+| ---------------------------- | ------------------------------------------------ |
+| `tsconfig-henrik/base.json`  | base rules                                       |
+| `tsconfig-henrik/react.json` | Rules for projects with React (not incl Next.js) |
+| `tsconfig-henrik/next.json`  | Rules for Next.js projects                       |
 
 ```json
 {
