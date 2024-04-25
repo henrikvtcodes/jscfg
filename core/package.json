@@ -11,8 +11,28 @@
   "license": "MIT",
   "type": "commonjs",
   "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./eslint": {
+      "import": "./dist/eslint.mjs",
+      "require": "./dist/eslint.js",
+      "types": "./dist/eslint.d.ts"
+    },
+    "./prettier": {
+      "import": "./dist/prettier.mjs",
+      "require": "./dist/prettier.js",
+      "types": "./dist/prettier.d.ts"
+    }
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "NODE_ENV=production tsup",
+    "dev": "tsup"
   },
   "devDependencies": {
     "tsup": "^8.0.2"

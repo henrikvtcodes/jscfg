@@ -1,0 +1,1 @@
+export { jscfg } from "./eslint";
