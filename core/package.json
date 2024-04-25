@@ -2,13 +2,14 @@
   "name": "jscfg",
   "version": "0.0.1",
   "description": "All-in-one configuration source for JavaScript/TypeScript projects",
+  "author": "Henrik Van Tassell <hello@henrikvt.com> (https://henrikvt.com)",
+  "license": "MIT",
+  "homepage": "https://github.com/henrikvtcodes/jscfg#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/henrikvtcodes/jscfg.git",
     "directory": "core"
   },
-  "author": "Henrik Van Tassell <hello@henrikvt.com>",
-  "license": "MIT",
   "type": "commonjs",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -28,11 +29,12 @@
       "import": "./dist/prettier.mjs",
       "require": "./dist/prettier.js",
       "types": "./dist/prettier.d.ts"
-    }
+    },
+    "./ts/*": "./tsconfigs/*"
   },
   "scripts": {
     "build": "NODE_ENV=production tsup",
-    "dev": "tsup"
+    "dev": "tsup --watch"
   },
   "devDependencies": {
     "tsup": "^8.0.2"
