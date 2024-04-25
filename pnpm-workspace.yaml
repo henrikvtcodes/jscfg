@@ -1,4 +1,2 @@
 packages:
-  - "eslint"
-  - "prettier"
-  - "tsconfig"
+  - "old/**"
