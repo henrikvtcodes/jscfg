@@ -37,6 +37,9 @@
     "dev": "tsup --watch"
   },
   "devDependencies": {
+    "@types/eslint-config-prettier": "^6.11.3",
+    "@types/eslint__js": "^8.42.3",
+    "@types/node": "^20.12.7",
     "tsup": "^8.0.2"
   },
   "peerDependencies": {
@@ -45,7 +48,9 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
+    "@eslint/js": "^9.1.1",
     "@ianvs/prettier-plugin-sort-imports": "^4.2.1",
+    "@typescript-eslint/utils": "^7.7.1",
     "eslint-config-next": "^14.1.4",
     "eslint-config-prettier": "^9.1.0",
     "eslint-config-turbo": "^1.13.2",
@@ -55,7 +60,9 @@
     "eslint-plugin-react": "7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-tailwindcss": "^3.15.1",
-    "prettier-plugin-tailwindcss": "^0.5.14"
+    "globals": "^15.0.0",
+    "prettier-plugin-tailwindcss": "^0.5.14",
+    "typescript-eslint": "^7.7.1"
   },
   "keywords": [
     "javascript",
