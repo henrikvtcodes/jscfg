@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfigs/base.json",
+  "include": ["src/**/*", "test/**/*"],
+  "exclude": ["node_modules", "dist"],
+  "compilerOptions": {
+    "lib": ["esnext"],
+    "outDir": "dist",
+    "moduleDetection": "auto",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext"
+  }
+}
