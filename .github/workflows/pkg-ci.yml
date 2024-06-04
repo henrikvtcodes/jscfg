@@ -36,4 +36,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Test
+        run: pnpm -v
+      - name: Test
         run: pnpm test --filter=tslnf
