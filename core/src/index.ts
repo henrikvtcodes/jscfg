@@ -1,1 +1,1 @@
-export { jscfg } from "./eslint";
+export { eslint } from "./eslint";
