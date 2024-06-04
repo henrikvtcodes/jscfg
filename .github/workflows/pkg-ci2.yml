@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  setup:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -38,40 +38,37 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Upload node_modules as artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: node-modules
-          path: node_modules
-
-  build:
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Download node_modules artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: node-modules
-          path: node_modules
-
       - name: Build
         run: pnpm run build --filter=tslnf
 
   test:
-    needs: setup
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Download node_modules artifact
-        uses: actions/download-artifact@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
         with:
-          name: node-modules
-          path: node_modules
+          node-version: lts/iron
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - uses: actions/cache@v4
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
       - name: Test
         run: pnpm test --filter=tslnf
