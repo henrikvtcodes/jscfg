@@ -1,5 +1,5 @@
 {
-  "name": "tslnf",
+  "name": "@oulabs/tslnf",
   "version": "0.0.1",
   "description": "All-in-one configuration source for JavaScript/TypeScript projects",
   "author": "Henrik Van Tassell <hello@henrikvt.com> (https://henrikvt.com)",
