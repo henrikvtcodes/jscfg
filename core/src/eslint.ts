@@ -8,7 +8,7 @@ import reactEslintJSXRuntime from "eslint-plugin-react/configs/jsx-runtime";
 // @ts-expect-error No .d.ts for eslint-plugin-jsx-a11y
 import jsxA11YEslint from "eslint-plugin-jsx-a11y";
 import globals from "globals";
-import { FlatConfig } from "@typescript-eslint/utils/ts-eslint";
+import { FlatConfig, ParserOptions } from "@typescript-eslint/utils/ts-eslint";
 // @ts-expect-error No .d.ts for eslint-plugin-react
 import nextEslint from "@next/eslint-plugin-next";
 // @ts-expect-error No .d.ts for eslint-config-next
@@ -19,6 +19,8 @@ import tailwindEslint from "eslint-plugin-tailwindcss";
 type UIValues = "react" | "nextjs";
 
 type ConfigOptions = {
+  /** config for parserOptions.project */
+  tsProject: ParserOptions["project"];
   tsconfigRoot: string;
   tsStylistic: boolean;
   tsStrict: boolean;
@@ -94,6 +96,7 @@ const drizzle: FlatConfig.Config = {
 };
 
 const defaultOptions: ConfigOptions = {
+  tsProject: true,
   tsconfigRoot: __dirname,
   tsStylistic: true,
   tsStrict: true,
@@ -148,7 +151,7 @@ function jscfg(
       ignores: ["node_modules"],
       languageOptions: {
         parserOptions: {
-          project: true,
+          project: strictOpts.tsProject,
           tsconfigRootDir: strictOpts.tsconfigRoot,
         },
       },
