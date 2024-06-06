@@ -4,9 +4,13 @@ on:
     branches:
       - main
       - v*
+    paths:
+      - "core/**/*.*"
   pull_request:
     branches:
       - main
+    paths:
+      - "core/**/*.*"
 
 jobs:
   build:
