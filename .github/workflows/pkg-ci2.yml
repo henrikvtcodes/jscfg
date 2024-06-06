@@ -38,8 +38,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Move into project directory
+        run: cd core
+
       - name: Build
-        run: pnpm run build --filter=tslnf
+        run: pnpm run build
 
   test:
     runs-on: ubuntu-latest
@@ -70,5 +73,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Move into project directory
+        run: cd core
+
       - name: Test
-        run: pnpm test --filter=tslnf
+        run: pnpm test
