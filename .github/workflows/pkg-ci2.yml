@@ -38,10 +38,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Move into project directory
-        run: cd core
-
       - name: Build
+        working-directory: core
         run: pnpm run build
 
   test:
@@ -73,8 +71,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Move into project directory
-        run: cd core
-
       - name: Test
+        working-directory: core
         run: pnpm test
