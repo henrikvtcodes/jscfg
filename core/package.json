@@ -41,6 +41,7 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@eslint/compat": "^1.0.3",
     "@eslint/js": "^9.4.0",
     "@ianvs/prettier-plugin-sort-imports": "^4.2.1",
     "@next/eslint-plugin-next": "^14.2.3",

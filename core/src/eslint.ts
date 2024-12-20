@@ -2,9 +2,9 @@ import js from "@eslint/js";
 import tseslint from "typescript-eslint";
 import eslintConfigPrettier from "eslint-config-prettier";
 // @ts-expect-error No .d.ts for eslint-plugin-react
-import reactEslintRecommended from "eslint-plugin-react/configs/recommended";
+import reactEslintRecommended from "eslint-plugin-react/configs/recommended.js";
 // @ts-expect-error No .d.ts for eslint-plugin-react
-import reactEslintJSXRuntime from "eslint-plugin-react/configs/jsx-runtime";
+import reactEslintJSXRuntime from "eslint-plugin-react/configs/jsx-runtime.js";
 // @ts-expect-error No .d.ts for eslint-plugin-jsx-a11y
 import jsxA11YEslint from "eslint-plugin-jsx-a11y";
 import globals from "globals";
@@ -15,6 +15,7 @@ import nextEslint from "@next/eslint-plugin-next";
 import nextEslintCWV from "eslint-config-next/core-web-vitals";
 // @ts-expect-error No .d.ts for eslint-plugin-tailwindcss
 import tailwindEslint from "eslint-plugin-tailwindcss";
+import { fixupConfigRules } from "@eslint/compat";
 
 type UIValues = "react" | "nextjs";
 
@@ -62,28 +63,31 @@ const react: FlatConfig.Config[] = [
   },
 ];
 
-const nextjs: FlatConfig.Config = {
-  files: ["*.tsx"],
-  languageOptions: {
-    parserOptions: {
-      ecmaFeatures: {
-        jsx: true,
+const nextjs = [
+  {
+    files: ["*.tsx"],
+    languageOptions: {
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+      globals: {
+        ...globals.browser,
       },
     },
-    globals: {
-      ...globals.browser,
+    settings: {
+      react: {
+        version: "detect",
+        linkComponents: [
+          { name: "Link", linkAttribute: "href" },
+          { name: "NextLink", linkAttribute: "href" },
+        ],
+      },
     },
+    rules: {},
   },
-  settings: {
-    react: {
-      version: "detect",
-      linkComponents: [
-        { name: "Link", linkAttribute: "href" },
-        { name: "NextLink", linkAttribute: "href" },
-      ],
-    },
-  },
-};
+] satisfies FlatConfig.ConfigArray;
 
 const drizzle: FlatConfig.Config = {
   files: ["*.ts", "*.tsx"],
@@ -105,7 +109,7 @@ const defaultOptions: ConfigOptions = {
   tailwindcss: false,
 };
 
-function jscfg(
+function lint(
   // Make config options optional
   options?: Partial<ConfigOptions>
 ): FlatConfig.ConfigArray {
@@ -133,6 +137,7 @@ function jscfg(
 
   const drizzleConfig: FlatConfig.Config = strictOpts.drizzle ? drizzle : {};
 
+  let uiOpts = strictOpts.ui.map((opt) => opt);
   let uiConfigs: FlatConfig.ConfigArray = [];
   for (const opt of strictOpts.ui ?? []) {
     switch (opt) {
@@ -141,7 +146,7 @@ function jscfg(
         break;
       case "nextjs":
         uiConfigs.push(...react);
-        uiConfigs.push(nextjs);
+        uiConfigs.push(...nextjs);
         break;
     }
   }
@@ -167,5 +172,5 @@ function jscfg(
   );
 }
 
-export default jscfg;
-export { jscfg as eslint };
+export default lint;
+export { lint as eslint };
